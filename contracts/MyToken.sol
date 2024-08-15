@@ -14,7 +14,7 @@ contract MyToken is ERC20 {
         ERC20(name, symbol) 
     {
         _owner = msg.sender; // Set the contract deployer as the initial owner
-        _mint(_owner, initialSupply);
+        _mint(_owner, initialSupply * (10 ** uint256(decimals()))); // Correctly set the initial supply with decimals
     }
 
     // Modifier to restrict functions to the owner
